@@ -10,7 +10,7 @@ from .enums import (
     CountBasedType,
 )
 from wizwalker.memory.memory_objects.conditionals import RequirementList
-from wizwalker.memory.memory_objects.spell import DynamicSpell
+#from wizwalker.memory.memory_objects.spell import DynamicSpell
 
 
 class SpellEffect(PropertyClass):
@@ -350,9 +350,9 @@ class DelaySpellEffect(DynamicSpellEffect):
     async def write_spell_hits(self, spell_hits: int):
         await self.write_value_to_offset(280, spell_hits, "char")
 
-    async def spell(self) -> DynamicSpell: #TODO: missing a write function, doesn't really matter -slack
+    """ async def spell(self) -> DynamicSpell: #TODO: missing a write function, doesn't really matter -slack
         addr = await self.read_value_from_offset(288, "long long")
         if addr == 0:
             return None
 
-        return DynamicSpell(self.hook_handler, addr)
+        return DynamicSpell(self.hook_handler, addr) """
